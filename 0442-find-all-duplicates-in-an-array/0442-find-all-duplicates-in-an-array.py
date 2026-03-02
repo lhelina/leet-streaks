@@ -4,13 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        seen = set()
-        duplicates = []
+        no_duplicate = set()
+        twice_num = []
         
         for num in nums:
-            if num in seen:
-                duplicates.append(num)
+            if num in no_duplicate:
+                twice_num.append(num)
             else:
-                seen.add(num)
+                no_duplicate.add(num)
                 
-        return duplicates
+        return twice_num
