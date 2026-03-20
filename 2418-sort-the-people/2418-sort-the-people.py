@@ -7,12 +7,14 @@ class Solution(object):
         """
 
         n=len(heights)
-        for passnum in range(len(heights)):
-            for i in range(n-1-passnum):
-                if heights[i]<heights[i+1]:
-                    heights[i],heights[i+1]=heights[i+1],heights[i]
-                    names[i],names[i+1]=names[i+1],names[i]
-        return names            
+        for i in range(len(heights)):
+            min_index=i
+            for j in range(i+1, n ):
+                if heights[min_index]<heights[j]:
+                    min_index=j
+            heights[i],heights[min_index]=heights[min_index],heights[i]
+            names[i],names[min_index]=names[min_index],names[i]
+        return names           
 
         
                 
