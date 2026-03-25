@@ -4,10 +4,13 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nums_count=Counter(nums)
-        for num , count in nums_count.items():
-            if count>(len(nums)//2):
-                return num
+        seen={}
+        for num in nums:
+            if num in seen:
+                seen[num]+=1
+            else:
+                seen[num]=1
+        for num , count in seen.items():
+            if count>len(nums)//2:
+                return num           
 
-
-        
