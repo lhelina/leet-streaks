@@ -14,7 +14,7 @@ class Solution(object):
         
         for k in range(len(mat) + len(mat[0]) - 1):
             if k % 2 == 0:
-                result.extend(diagonals[k][::-1])  # reverse
+                result.extend(diagonals[k][::-1])  
             else:
                 result.extend(diagonals[k])
         
